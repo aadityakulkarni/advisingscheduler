@@ -31,7 +31,7 @@ public class Email {
      * 
      */
     private static String from = "mavnotification@gmail.com";
-    private static String pw = "mavnotification2016";
+    private static String pw = "CSEteam3";
     private static String host = "smtp.gmail.com";
     private static String port = "587";
     private static SimpleDateFormat iCalendarDateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmm'00'");
@@ -181,6 +181,6 @@ public class Email {
         UID uid = new UID();//unique email id.  HAS to be saved for cancellations/modifications.
         System.out.println(uid.toString());
         String uidStr = uid.toString();
-        e.sendOutlookEmail("ethan.bowen@mavs.uta.edu", "tracy.oguni@mavs.uta.edu", "Create Appointment!", "See the details in the outlook invitation.", starttime, 15, uidStr, "CANCEL");
+        e.sendOutlookEmail("aadikulkarni91@gmail.com", "aaditya.kulkarni@mavs.uta.edu", "Create Appointment!", "See the details in the outlook invitation.", starttime, 15, uidStr, "CANCEL");
     }
 }
