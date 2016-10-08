@@ -1,0 +1,8 @@
+build/
+.metadata/
+RemoteSystemsTempFiles/
+s2/
+sql/
+createAdvisingTables.sql
+databaseSetupReadme.txt
+dropAdvisingTables.sql
