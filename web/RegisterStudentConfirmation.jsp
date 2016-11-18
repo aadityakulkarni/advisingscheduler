@@ -4,6 +4,7 @@
     Author     : includetech
 --%>
 
+<%@page import="uta.cse6329.captcha.CaptchasDotNet"%>
 <%@page import="uta.cse4361.businessobjects.Email"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,7 +30,33 @@
                 <h3>Account Confirmation</h3>
                 <div>
                 <%
-                    String result = newstudent.Student();
+                    // CAPTCHA implemented according to the captcha.net free service
+                    CaptchasDotNet captchas = new CaptchasDotNet(
+                        request.getSession(true),     // Ensure session
+                        "aadikulkarni91",                       // client
+                        "a1WXCBHxLqPIgxHuipRB5fSGRaU52HxRmk6n38lI"   // secret
+                    );
+                    String captcha = request.getParameter("captcha");
+                    
+                    String body;
+switch (captchas.check(captcha)) {
+  case 's':
+    body = "Session seems to be timed out or broken. ";
+    body += "Please try again or report error to administrator.";
+    out.print("Registration could not be completed!" + body);
+    break;
+  case 'm':
+    body = "Every CAPTCHA can only be used once. ";
+    body += "The current CAPTCHA has already been used. ";
+    
+    out.print("Registration could not be completed!" + body);
+    break;
+  case 'w':
+    body = "You entered the wrong CAPTCHA. ";
+                  out.print("Registration could not be completed!" + body);
+    break;
+  default:
+    String result = newstudent.Student();
                     if (result == "") {
                         out.print(newstudent.getName() +" has been registered! Please check your email for further details.");
                         Email e = new Email();
@@ -45,6 +72,11 @@
                     else {
                         out.print("Registration could not be completed!");
                     }
+    break;
+}
+                    
+                    
+                    
                 %>
                 </div>
             </div>

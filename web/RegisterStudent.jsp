@@ -4,11 +4,21 @@
     Author     : Divya
 --%>
 
+<%@page import="uta.cse6329.captcha.CaptchasDotNet"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
 <%@page import="uta.cse4361.databases.DatabaseManager"%>
 <%@page import="uta.cse4361.businessobjects.Slot"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+// Construct the captchas object (Default Values)
+CaptchasDotNet captchas = new CaptchasDotNet(
+  request.getSession(true),     // Ensure session
+  "aadikulkarni91",                       // client
+  "a1WXCBHxLqPIgxHuipRB5fSGRaU52HxRmk6n38lI"                      // secret
+  );
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,6 +44,8 @@
                 var email = document.forms["RegisterStudent"]["email"].value;
                 var atpos = email.indexOf("@");
                 var dotpos = email.lastIndexOf(".");
+                var captcha = document.forms["RegisterStudent"]["captcha"].value;
+                
                 if (/(\W|^)[\w.+\-]*@mavs\.uta\.edu(\W|$)/.test(email)) 
                 {
                     
@@ -46,7 +58,13 @@
                     document.forms["RegisterStudent"]["email"].focus();
                     return false;
                 }   
-                    
+                if (captcha === null || captcha === "") {
+                    $("#captcha").notify("Please enter a valid captcha", "error",
+                            {elementPosition: 'bottom center',
+                                globalPosition: 'bottom center'})
+                    document.forms["RegisterStudent"]["captcha"].focus();
+                    return false;
+                }    
                 if (email === null || email === "") {
                     $("#email").notify("Please enter your email", "error",
                             {elementPosition: 'bottom center',
@@ -142,6 +160,12 @@
                             <option value="CPE">CPE</option>
                             <option value="Undecided">Undecided</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Captcha</label>
+                            <br><%= captchas.image() %><br>
+                            <!--<a href="<%= captchas.audioUrl() %>" target="_blank">Phonetic spelling (mp3)</a>-->
+                            <input type="text" name="captcha" id="captcha" value="" class="form-control">
                     </div>
                     <input type="submit" value="Register" id="registerBtn" class="btn btn-default">
                 </form>
