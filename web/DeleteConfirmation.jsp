@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Delete User</title>
         <jsp:useBean id="deleteUser" class="uta.cse4361.beans.DeleteUserBean"/> 
-        <jsp:setProperty name="deleteUser" property="email" value="<%=request.getParameter("email")%>" />
+        <jsp:setProperty name="deleteUser" property="email" value='<%=request.getParameter("email")%>' />
     </head>
     <body>
        <jsp:include page="navigationbar.jsp" />
