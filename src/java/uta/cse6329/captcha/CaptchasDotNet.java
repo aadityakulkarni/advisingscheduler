@@ -12,7 +12,7 @@
  *
  * 2006-09-21: Initial version.
  */
-
+//Added for the functionality of CAPTCHA
 package uta.cse6329.captcha;
 
 import java.io.*;
