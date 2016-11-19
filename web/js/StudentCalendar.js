@@ -116,6 +116,6 @@ var calendar = $('#calendar').fullCalendar({
         //load events
         events: formattedEventData
                           
-    })//fullcalendar end
+    });//fullcalendar end
   
 });//ready end

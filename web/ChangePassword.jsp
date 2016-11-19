@@ -38,7 +38,7 @@
                     document.forms["ChangePassword"]["confirmPassword"].focus();
                     return false;
                 }
-                if (/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,24}$/.test(confirmPassword)) 
+                if (/^(?=.*[A-Z])(?=.*[!@#$&.*])(?=.*[0-9]).{8,24}$/.test(confirmPassword)) 
                 {
                 }
                 else
