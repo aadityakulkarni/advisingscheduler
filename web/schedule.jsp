@@ -1,4 +1,7 @@
 
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.List"%>
+<%@page import="uta.cse4361.businessobjects.Appointment"%>
 <%@page import="uta.cse4361.businessobjects.StudentAccount"%>
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
@@ -28,12 +31,26 @@
                 String newRecord = "" + dd + "-" + mm + "-" + yy;
                 availables.add(newRecord);
             }
+            //ArrayList<String> existingApp = new ArrayList<String>();
+            String email1 = (String)session.getAttribute("email");
+            ArrayList<Appointment> appts = dm.getAllUserAppointments(email1);
+            List<String> tempDate = new ArrayList<>();
+            for(Appointment a: appts) {
+                int dd1 = a.getDate().getDate();
+                int mm1 = a.getDate().getMonth() + 1;
+                int yy1 = a.getDate().getYear() + 1900;
+                String newRecord1 = "" + dd1 + "-" + mm1 + "-" + yy1;
+                tempDate.add(newRecord1);
+            }
+            
+            availables.removeAll(tempDate);
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < availables.size(); i++) {
                 sb.append(availables.get(i) + ",");
             }
         %>
-
+        
+       
         <script type="text/javascript">
             temp = "<%=sb.toString()%>";
             var availableDates = new Array();
@@ -149,7 +166,7 @@
                 var major = document.getElementById("major");
                 var advisor = document.getElementById("advisor");
                 <%dm = new DatabaseManager();                    
-                  HashMap<String, ArrayList<User>> usersByRank = dm.getUsersByRank(1);%>
+                  HashMap<String, ArrayList<User>> usersByRank = dm.getUsersByRank(0);%>
                   var departments = "<%=usersByRank.keySet()%>"
                   <% System.out.println(usersByRank.keySet()); %>
                   <% for(String department : usersByRank.keySet()) { %>

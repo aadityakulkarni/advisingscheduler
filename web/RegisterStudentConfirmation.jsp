@@ -4,7 +4,7 @@
     Author     : includetech
 --%>
 
-<%@page import="uta.cse6329.captcha.CaptchasDotNet"%>
+<%@page import="uta.cse6329.CaptchasDotNet"%>
 <%@page import="uta.cse4361.businessobjects.Email"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

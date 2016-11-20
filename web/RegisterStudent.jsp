@@ -4,7 +4,7 @@
     Author     : Divya
 --%>
 
-<%@page import="uta.cse6329.captcha.CaptchasDotNet"%>
+<%@page import="uta.cse6329.CaptchasDotNet"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
 <%@page import="uta.cse4361.databases.DatabaseManager"%>
