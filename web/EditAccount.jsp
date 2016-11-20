@@ -25,7 +25,7 @@
             if (!(session.getAttribute("id") == null)) {
                     sessionid = Integer.parseInt((String) session.getAttribute("id"));
                 }
-                if (!(session.getAttribute("rank") == null)) {
+            if (!(session.getAttribute("rank") == null)) {
                     rank = Integer.parseInt((String) session.getAttribute("rank"));
             }
             if(rank != 1){
@@ -79,8 +79,8 @@
                         String userDept = arr[0];
                         int userRank = Integer.parseInt(arr[1]);
                         String isEmailOn = "1";
-                        if(userRank == 0)
-                            isEmailOn = arr[5];
+//                        if(userRank == 0)
+//                            isEmailOn = arr[5];
                        System.out.println(userEmail+":"+userName+":"+userPassword+":"+userDept+":"+userRank);
                     %>
 

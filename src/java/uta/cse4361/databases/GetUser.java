@@ -36,7 +36,7 @@ public class GetUser extends RDBImplCommand {
         this.user=rs;
     }
     
-    private String sqlQuery = "SELECT * FROM USER WHERE UserId = ?";
+    private String sqlQuery = "SELECT * FROM USER WHERE UserID =?";
     
     public void queryDB() throws SQLException{
         
@@ -58,11 +58,11 @@ public class GetUser extends RDBImplCommand {
                 sb.append(rs.getString("UserName"));
                 sb.append(";");
                 sb.append(rs.getString("UserPassword"));
-                if(rs.getInt("UserRank") == 0)
-                {
-                    sb.append(";");
-                    sb.append(rs.getString("isEmailOn"));
-                }
+//                if(rs.getInt("UserRank") == 0)
+//                {
+//                    sb.append(";");
+//                    sb.append(rs.getString("isEmailOn"));
+//                }
                 System.out.println(sb.toString());
                 userMapping.put(rs.getInt("UserId"),sb.toString());
 
