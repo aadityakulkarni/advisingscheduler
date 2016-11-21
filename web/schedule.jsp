@@ -107,7 +107,7 @@
                     return false;
                 }
                 if(email.indexOf("mavs.uta.edu") > 0) {
-                    if (sID === null || sID === "") 
+                    if (sID === null || sID === "") {
                         $("#sID").notify("Please enter your student ID", "error",
                                 {elementPosition: 'bottom center',
                                     globalPosition: 'bottom center'})
@@ -128,8 +128,8 @@
                         document.forms["schedule"]["sID"].focus();
                         return false;
                     }
-                    if (sID.indexOf("1000") === -1 && sID.indexOf("6000") === -1) {
-                        $("#sID").notify("Your student ID should begin with 1000 or 6000", "error",
+                    if (sID.indexOf("100") === -1 && sID.indexOf("600") === -1) {
+                        $("#sID").notify("Your student ID should begin with 100 or 600", "error",
                                 {elementPosition: 'bottom center',
                                     globalPosition: 'bottom center'})
                         document.forms["schedule"]["sID"].focus();
@@ -245,6 +245,30 @@
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea name="description" id="description"  value="" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Reason</label>
+                        <input type="text" name="reason" id="reason" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Approximate time</label>
+                        <input type="text" name="time" id="time" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="courses">Courses Enrolled</label>
+                        <input type="text" name="courses" id="courses" placeholder="enter course number separated by coma" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="sem">Current Semester</label>
+                        <input type="text" name="sem" id="sem" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="advising">Advising for CPT/OPT</label>
+                        <input type="text" name="advising" id="advising" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Is appointment Urgent</label>
+                        <input type="text" name="urgency" id="urgency" class="form-control">
                     </div>
                     <input type="submit" value="Submit" id="submitBtn" class="btn btn-default">
                     <input type="reset" value="Reset" id="resetBtn" class="btn btn-default">
