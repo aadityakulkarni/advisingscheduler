@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import uta.cse4361.beans.WaitListBean;
 import uta.cse4361.businessobjects.Appointment;
 import uta.cse4361.businessobjects.Slot;
 import uta.cse4361.businessobjects.SlotFactory;
@@ -132,5 +133,9 @@ public class DatabaseManager {
     public String editAdvisorEmailSetting(String email, String setting)
     {
         return imp.editAdvisorEmailSetting(email, setting);
+    }
+     public String insertIntoWaitList(WaitListBean wb)
+    {
+        return imp.addToWaitList(wb);
     }
 }

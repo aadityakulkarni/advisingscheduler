@@ -9,6 +9,7 @@ package uta.cse4361.databases;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import uta.cse4361.beans.WaitListBean;
 import uta.cse4361.businessobjects.Appointment;
 import uta.cse4361.businessobjects.Slot;
 import uta.cse4361.businessobjects.AdvisorAccount;
@@ -39,5 +40,6 @@ public interface DatabaseImpInterface {
     public ArrayList<Appointment> getAllUserAppointments(String email);
     public String editAdvisorEmailSetting(String email, String setting);
     public String deleteStudentAppointment(int apptID);
+    public String addToWaitList(WaitListBean wb);
 
 }

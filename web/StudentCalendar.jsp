@@ -4,6 +4,7 @@
     Author     : Melissa
 --%>
 
+<%@page import="uta.cse4361.beans.WaitListBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uta.cse4361.databases.DatabaseManager"%>
 <html>
@@ -81,6 +82,7 @@
         <jsp:setProperty name="newAppt" property="endMinute" value= '<%= getMin(request.getParameter("endTime")) %>'/>
         
         <%}%>
+        
         <title>Advising Calendar</title>
         <link rel='stylesheet' href='css/fullcalendar.css' />
         <meta charset="UTF-8">
@@ -140,6 +142,10 @@
                                             <label for="description">Description</label> 
                                         <textarea class="form-control" name="description" id="description" value="" readonly="readonly"></textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="waitlist">Waitlist</label><br> 
+                                            <input type="checkbox" name="waitlist" id ="waitlist" value="1"> Enroll in Waitlist
+                                        </div>
                                         <input type="submit" value="Make Appointment" id="submitBtn" class="btn btn-default">
                                     </form>
                                     <%if(timeSubmitted){
@@ -153,7 +159,26 @@
                                             else{
                                                 out.println(result);
                                             }
-                                        }%>
+                                        }
+                                    //String on = "on";
+                                    if("1".equals(request.getParameter("waitlist"))){
+                                        
+                                        WaitListBean wb = new WaitListBean();
+                                        wb.setAdvisoremail("abcd@mavs.uta.edu");
+                                        wb.setAdvisorname("Advisor");
+                                        wb.setApptdate(request.getParameter("date"));
+                                        wb.setDescription(request.getParameter("date"));
+                                        wb.setStudentemail(request.getParameter("email"));
+                                        wb.setStudentname(request.getParameter("sName"));
+                                        wb.setWaitlistno(2);
+                                        wb.setStudentid(request.getParameter("sID"));
+                                        
+                                        wb.getIntoWaitList();
+                                        
+                                        //System.out.println();
+                                        response.sendRedirect("WaitListDetails.jsp");
+                                    }
+                                    %>
                                 </div>                              
                         </div>
 

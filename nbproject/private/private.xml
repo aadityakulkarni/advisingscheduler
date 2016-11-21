@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/src/java/uta/cse4361/databases/DatabaseManager.java</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/src/java/uta/cse4361/databases/RelationalDatabaseImpl.java</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/src/java/uta/cse4361/businessobjects/AvailableSlot.java</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/src/java/uta/cse4361/databases/GetSlot.java</file>
+            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/web/AppointmentDetails.jsp</file>
             <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/web/schedule.jsp</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/web/AdvisorCalendar.jsp</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/src/java/FindHashPassord/CheckWeek.java</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/src/java/FindHashPassord/FindHashPassord.java</file>
-            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/web/CheckAppointments.jsp</file>
+            <file>file:/E:/MS%20at%20UTA/CSE%206329/Project/advisingscheduler/advisingscheduler/advisingscheduler/web/StudentCalendar.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -7,6 +7,7 @@ package uta.cse4361.databases;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import uta.cse4361.beans.WaitListBean;
 import uta.cse4361.businessobjects.AdvisorAccount;
 import uta.cse4361.businessobjects.Appointment;
 import uta.cse4361.businessobjects.EmailManager;
@@ -207,6 +208,12 @@ public class RelationalDatabaseImpl implements DatabaseImpInterface{
        editEmailSetting.execute();
        return (String)editEmailSetting.getResult();   
      }
-     
+
+    @Override
+    public String addToWaitList(WaitListBean wb) {
+       RDBImplCommand waitlist = new WaitListInsert(wb);
+       waitlist.execute();
+       return (String)waitlist.getResult();
+    }   
     
 }
