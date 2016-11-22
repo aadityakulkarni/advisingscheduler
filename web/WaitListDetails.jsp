@@ -19,7 +19,7 @@
         <div id="accordion" class="centerthis">
             <h3>Success</h3>
             <div>
-                WaitListed Appointment has been created.
+                WaitListed Appointment has been created. Your waitlist number is 2.
             </div>
         </div>                   
         </div>

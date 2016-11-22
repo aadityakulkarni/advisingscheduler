@@ -49,6 +49,7 @@ and open the template in the editor.
                             if (rank == -1){
                                 out.print("Would you like to check on your current schedule?<br><br>"
                                         + " <input type='submit' value='Login to your account' id='loginBtn' class='btn btn-default'>"
+                                        + " <br><input type='button' value='Forgot Password' id='forgotpass' onclick='redir()' class='btn btn-link'>"
                                         );
                             }
                             if (rank == 1){
@@ -99,6 +100,10 @@ and open the template in the editor.
 
     </body>
     <jsp:include page='footer.jsp' />
-
+    <script>
+        function redir(){
+            window.location = 'forgotpass.jsp';
+        }
+    </script>
     <script type='text/javascript' src='js/index.js'></script>
 </html>

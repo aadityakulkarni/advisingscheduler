@@ -14,7 +14,7 @@ public class Scheduler implements uta.cse4361.interfaces.Constants{
     DatabaseManager databaseManager = new DatabaseManager();
     
     Date date = new Date();
-    SlotFactory aff =  SlotFactory.getInstance();
+    SlotFactory aff =  uta.cse4361.businessobjects.SlotFactory.getInstance();
     Appointment appointment =new Appointment();
     
 

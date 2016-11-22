@@ -152,6 +152,10 @@ CaptchasDotNet captchas = new CaptchasDotNet(
                         <label for="username">User Name</label>
                         <input type="text" name="username" id="username" value="" class="form-control">
                     </div>
+                     <div class="form-group">
+                        <label for="username">Contact Number</label>
+                        <input type="text" name="phone" id="phone" value="" class="form-control">
+                    </div>
                     <div class="form-group">
                         <label for="major">Major</label>
                         <select name="major" id="major" class="form-control" >
@@ -160,6 +164,17 @@ CaptchasDotNet captchas = new CaptchasDotNet(
                             <option value="CPE">CPE</option>
                             <option value="Undecided">Undecided</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Notification Type</label>
+                        <br><input type="checkbox" name="notify" id="notifyemail" value="email" class="pull">Email
+                        <input type="checkbox" name="notify" id="notifymsg" value="msg" >Message
+                        <input type="checkbox" name="notify" id="notifycall" value="call">Call
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Security Question</label>
+                        <input type="text" name="secque" id="question" value="" placeholder="Enter your security question here" class="form-control">
+                        <input type="text" name="secque" id="answer" value="" placeholder="Enter your answer for the above mentioned security question" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Captcha</label>
